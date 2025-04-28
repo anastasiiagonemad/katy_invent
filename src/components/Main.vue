@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div :class="$style.main">
         <div 
           class="header" 
           :class="$style['header__container']"
@@ -213,62 +213,61 @@ onMounted(() => {
         }
     });
 
-    gsap.fromTo('.wishes', {
-       opacity: 1
-    },
-    {
-        opacity: 0,
-        scrollTrigger: {
-            trigger: '.wishes',
-            start: 'center',
-            end: 'bottom',
-            scrub: 'true',
-            toggleActions: 'play none none none'
-        }
-    });
+    // gsap.fromTo('.wishes', {
+    //    opacity: 1
+    // },
+    // {
+    //     opacity: 0,
+    //     scrollTrigger: {
+    //         trigger: '.wishes',
+    //         start: 'center',
+    //         end: 'bottom',
+    //         scrub: 'true',
+    //         toggleActions: 'play none none none'
+    //     }
+    // });
 
-    gsap.fromTo('.regret', {
-       opacity: 1
-    },
-    {
-        opacity: 0,
-        scrollTrigger: {
-            trigger: '.regret',
-            start: 'center',
-            end: 'bottom',
-            scrub: 'true',
-            toggleActions: 'play none none none'
-        }
-    });
+    // gsap.fromTo('.regret', {
+    //    opacity: 1
+    // },
+    // {
+    //     opacity: 0,
+    //     scrollTrigger: {
+    //         trigger: '.regret',
+    //         start: 'center',
+    //         end: 'bottom',
+    //         scrub: 'true',
+    //         toggleActions: 'play none none none'
+    //     }
+    // });
 
-    gsap.fromTo('.cheers', {
-       opacity: 1
-    },
-    {
-        opacity: 0,
-        scrollTrigger: {
-            trigger: '.cheers',
-            start: 'center center',
-            end: 'bottom 20%',
-            scrub: 'true',
-            toggleActions: 'play none none none'
-        }
-    });
+    // gsap.fromTo('.cheers', {
+    //    opacity: 1
+    // },
+    // {
+    //     opacity: 0,
+    //     scrollTrigger: {
+    //         trigger: '.cheers',
+    //         start: 'top 80%',
+    //         end: 'bottom',
+    //         scrub: 'true',
+    //         toggleActions: 'play none none none'
+    //     }
+    // });
 
-    gsap.fromTo('.end', 
-    {
-        opacity: 0
-    },
-    {
-        opacity: 1, 
-        scrollTrigger: {
-            trigger: '.end',
-            start: 'top 90%',
-            end: 'center top',
-            scrub: 'true',
-            toggleActions: 'play none none none'
-        }
-    });
+    // gsap.fromTo('.end', 
+    // {
+    //     opacity: 0
+    // },
+    // {
+    //     opacity: 1, 
+    //     scrollTrigger: {
+    //         trigger: '.end',
+    //         start: 'top 100%',
+    //         scrub: 'true',
+    //         toggleActions: 'play none none none'
+    //     }
+    // });
 
     gsap.fromTo('.heart__image', 
     {
@@ -289,7 +288,7 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .block-paddings {
-    // margin: 20vw 0;
+    margin: 20vw 0;
     height: 100vh;
 }
 
@@ -311,6 +310,10 @@ onMounted(() => {
 </style>
 
 <style lang="scss" module>
+
+.main {
+    overflow: hidden;
+}
 
 .header__container {
     height: 85vh;
@@ -407,7 +410,7 @@ onMounted(() => {
 .invent__container {
     height: 100vh;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     flex-direction: column;
     text-align: center;
@@ -447,6 +450,7 @@ onMounted(() => {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     &--title {
         text-align: center;
         font-family: 'names';
@@ -479,10 +483,11 @@ onMounted(() => {
 
 .regret__container {
     position: relative;
-    height: 100vh;
+    // height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
+    align-items: center;
 
     &--content {
         background: white;
@@ -494,23 +499,25 @@ onMounted(() => {
         justify-content: space-between;
         text-align: center;
         border-radius: 24px;
-        filter: drop-shadow(10px 4px 15px rgba(255, 173, 173, 0.25));
+        p {
+            font-size: 5vw;
+        }
         img {
-            width: 7vw;
+            width: 15vw;
         }
     }
     &--paper-clip {
         position: absolute;
         right: 30px;
-        top: 41.5vh;
-        width: 3vw;
+        top: 0;
+        width: 5vw;
     }
 }
 
 .cheers__container {
-    height: 100vh;
+    // height: 100vh;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     background: url('images/cheers.png') no-repeat center center/cover;
     height: 100%;
