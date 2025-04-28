@@ -347,7 +347,9 @@ onMounted(() => {
     margin-right: 3vw;
     display: flex;
     justify-content: flex-end;
+    animation: startEffect 5s ease-in-out forwards;
 }
+
 
 .top-image {
     background: url('/images/loveyou.png') no-repeat center;
@@ -356,6 +358,7 @@ onMounted(() => {
     z-index: 2;
     display: flex;
     justify-content: center;
+    animation: startEffect 5s ease-in-out forwards;
     img {
         object-fit: cover;
         width: 350px;
@@ -365,6 +368,11 @@ onMounted(() => {
             width: 50%;
         }
     }
+}
+
+@keyframes startEffect {
+    from{opacity: 0;}
+    to{opacity: 1;}
 }
 
 .letter {
@@ -485,6 +493,8 @@ onMounted(() => {
         align-items: center;
         justify-content: space-between;
         text-align: center;
+        border-radius: 24px;
+        filter: drop-shadow(10px 4px 15px rgba(255, 173, 173, 0.25));
         img {
             width: 7vw;
         }
