@@ -14,5 +14,5 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
-  base: '/katy-invent/'
+  base: 'https://anastasiiagonemad.github.io/katy-invent/'
 })
