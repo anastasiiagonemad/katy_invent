@@ -22,11 +22,12 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import Main from '@/components/Main.vue'
+import track from '/audio/love.mp3'
 
 const showIntro = ref(true)
 const showHeart = ref(false)
 
-const audio = new Audio('/katy_invent/audio/love.mp3')
+const audio = new Audio(track)
 
 const handleAnswer = (play: boolean) => {
   if (play) {

@@ -519,7 +519,7 @@ onMounted(() => {
     display: flex;
     justify-content: start;
     align-items: center;
-    background: url('images/cheers.png') no-repeat center center/cover;
+    background: url('/images/cheers.png') no-repeat center center/cover;
     height: 100%;
     img {
         transform: rotate(10deg);
