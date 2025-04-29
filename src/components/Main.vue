@@ -1,9 +1,6 @@
 <template>
     <div :class="$style.main">
-        <div 
-          class="header" 
-          :class="$style['header__container']"
-        >
+        <div class="header" :class="$style['header__container']">
             <div class="header__text" :class="$style['header__title1']">
                 <h1 :class="$style['title-1']">Любовь - это...</h1>
             </div>
@@ -15,10 +12,7 @@
             </div>
         </div>
 
-        <div 
-          class="letter block-paddings" 
-          :class="$style['letter__container']"
-        >
+        <div class="letter block-paddings" :class="$style['letter__container']">
             <div :class="$style['letter__image']">
                 <img src="/images/letter.png" alt="pic">
             </div>
@@ -27,80 +21,68 @@
             </div>
         </div>
 
-        <div 
-          class="invent block-paddings" 
-          :class="$style['invent__container']"
-        >
-            <div :class="$style['invent__title']">
-                <h2>27.06.2025</h2>
-            </div>
-            <div>
-                <p><span>15:20</span><br>Торжественная роспись <br>Приморский ЗАГС</p>
-            </div>
-            <div>
-                <p><span>17:00</span><br>Фуршет <br>Банкетный зал, 2 этаж,<br> Приморский пр. 137, к.1 СПб</p>
-            </div>
-        </div>
-
-        <div 
-          :class="$style['line__container']" 
-          class="block-paddings line heart"
-        >
+        <div :class="$style['line__container']" class="line heart">
             <img class="heart__image" src="/images/heart.svg" alt="heart">
         </div>
 
-        <div 
-          class="block-paddings wishes" 
-          :class="$style[' wishes__container']"
-        >
+        <div class=" wishes" :class="$style[' wishes__container']">
             <h2 :class="$style['wishes__container--title']">Пожелания</h2>
             <div :class="$style['wishes__container--text']">
                 <div class="wishes__text" v-for="el in wishes" :key="el.id" :ref="'wishText_' + el.id"
                     :class="$style[`wishes__container--text__${el.id}`]">
                     <span>{{ el.id }}</span>
-                    <p>{{ el.wish }}</p>
+                    <p v-html="el.wish" />
                 </div>
             </div>
         </div>
 
-        <div 
-          class="block-paddings regret" 
-          :class="$style['regret__container']"
-        >
-            <div :class="$style['regret__container--content']">
-                <p :class="$style['regret__container--content__text']">Для подтверждения вашего присутствия, отправьте
-                    видео-кружочек в телеграм</p>
-                <a target="_blank" href="https://t.me/katrina0912">
-                    <img :class="$style['regret__container--content__img']" src="/images/telegram.svg"
-                        alt="telegram icon">
-                </a>
+        <div :class="$style['info__container']">
+            <div class="invent" :class="$style['invent__container']">
+                <div :class="$style['invent__title']">
+                    <h2>27.06.2025</h2>
+                </div>
+                <div>
+                    <p><span>15:20</span><br>Торжественная роспись <br>Приморский ЗАГС</p>
+                </div>
+                <div>
+                    <p><span>17:00</span><br>Фуршет <br>Банкетный зал, 2 этаж,<br> Приморский пр. 137, к.1 СПб</p>
+                </div>
             </div>
-            <img :class="$style['regret__container--paper-clip']" src="/images/paper-clip.svg" alt="pic">
+            <div class="regret" :class="$style['regret__container']">
+                <div :class="$style['regret__container--content']">
+                    <p :class="$style['regret__container--content__text']">Для подтверждения вашего присутствия,
+                        отправьте
+                        видео-кружочек в телеграм</p>
+                    <a target="_blank" href="https://t.me/katrina0912">
+                        <img :class="$style['regret__container--content__img']" src="/images/telegram.svg"
+                            alt="telegram icon">
+                    </a>
+                </div>
+                <img :class="$style['regret__container--paper-clip']" src="/images/paper-clip.svg" alt="pic">
+            </div>
         </div>
 
-        <div 
-          class="block-paddings cheers" 
-          :class="$style['cheers__container']"
-        >
-            <img src="/images/cheers-pic.jpg" alt="pic">
-        </div>
 
-        <div 
-          class="end" 
-          :class="$style['end__container']"
-        >
-            <div class="end__image" :class="$style['end__container--image']">
-                <img src="/images/1.jpg" alt="pic">
+        <div class="cheers" :class="$style['cheers__container']">
+            <!-- <img src="/images/cheers-pic.jpg" alt="pic"> -->
+            <img class="cheers-left" :class="$style['cheers__container--left']" src="/images/glass.svg" alt="cheers">
+            <img class="cheers-right" :class="$style['cheers__container--right']" src="/images/glass.svg" alt="cheers">
+            <div class="cheers-text" :class="$style['cheers__container--text']">Cheers!</div>
             </div>
-            <div class="end__text" :class="$style['end__container--text']">
-                <h2>With</h2>
-                <span>Love</span>
-            </div>
-            <div class="end__names" :class="$style['end__container--names']">
-                <h3>Екатерина и Сергей</h3>
+
+            <div class="end" :class="$style['end__container']">
+                <div class="end__image" :class="$style['end__container--image']">
+                    <img src="/images/1.jpg" alt="pic">
+                </div>
+                <div class="end__text" :class="$style['end__container--text']">
+                    <h2>With</h2>
+                    <span>Love</span>
+                </div>
+                <div class="end__names" :class="$style['end__container--names']">
+                    <h3>Екатерина и Сергей</h3>
+                </div>
             </div>
         </div>
-    </div>
 </template>
 
 <script lang="ts" setup>
@@ -113,9 +95,9 @@ const letterText = ref('')
 const fullText = `Случилось невероятное!<br>Наша безграничная любовь дала повод собрать всех родных и близких вместе.<br><br><br>Приглашаем Вас отметить этот особенный день - день нашей свадьбы!`
 
 const wishes = [
-    {id: 1, wish: 'Чтобы наши руки были свободны для объятий, будем рады легким подаркам в ковертах!'},
-    {id: 2, wish: 'Если вы хотите преподнести нам цветы, то пусть это будут розы, пионы или гортензии, которые создадут атмосферу нежности и гармонии.'},
-    {id: 3, wish: 'Ваше присутствие - лучший поадрок для нас. Мы ждем вас на нашем празднике любви и счастья!'},
+    {id: 1, wish: 'Мы мечтаем обнять каждого гостя, поэтому с особой благодарностью примем ваши пожелания в конвертах!'},
+    { id: 2, wish: 'Пусть наш праздник расцветёт букетами из роз, пионов или гортензий — искренних спутников нежности. Лишь аромат лилий, как давний знакомый, остаётся за дверью этого дня.'},
+    {id: 3, wish: 'Ваша улыбка, ваш смех, ваши искренние поздравления – вот что сделает наш день по-настоящему волшебным. До встречи на празднике!'},
 ]
 
 
@@ -156,10 +138,10 @@ onMounted(() => {
     });
 
     gsap.fromTo('.header__text', {
-       scale: 1
+       opacity: 1
     },
     {
-        scale: 0.2,
+        opacity: 0,
         scrollTrigger: {
             trigger: '.header__text',
             start: 'top',
@@ -183,19 +165,19 @@ onMounted(() => {
         }
     });
 
-    gsap.fromTo('.invent', {
-       opacity: 1
-    },
-    {
-        opacity: 0,
-        scrollTrigger: {
-            trigger: '.invent',
-            start: 'top',
-            end: 'bottom',
-            scrub: 'true',
-            toggleActions: 'play none none none',
-        }
-    });
+    // gsap.fromTo('.invent', {
+    //    opacity: 1
+    // },
+    // {
+    //     opacity: 0,
+    //     scrollTrigger: {
+    //         trigger: '.invent',
+    //         start: 'top',
+    //         end: 'bottom',
+    //         scrub: 'true',
+    //         toggleActions: 'play none none none',
+    //     }
+    // });
 
     gsap.fromTo('.line', {
        opacity: 1,
@@ -213,62 +195,6 @@ onMounted(() => {
         }
     });
 
-    // gsap.fromTo('.wishes', {
-    //    opacity: 1
-    // },
-    // {
-    //     opacity: 0,
-    //     scrollTrigger: {
-    //         trigger: '.wishes',
-    //         start: 'center',
-    //         end: 'bottom',
-    //         scrub: 'true',
-    //         toggleActions: 'play none none none'
-    //     }
-    // });
-
-    // gsap.fromTo('.regret', {
-    //    opacity: 1
-    // },
-    // {
-    //     opacity: 0,
-    //     scrollTrigger: {
-    //         trigger: '.regret',
-    //         start: 'center',
-    //         end: 'bottom',
-    //         scrub: 'true',
-    //         toggleActions: 'play none none none'
-    //     }
-    // });
-
-    // gsap.fromTo('.cheers', {
-    //    opacity: 1
-    // },
-    // {
-    //     opacity: 0,
-    //     scrollTrigger: {
-    //         trigger: '.cheers',
-    //         start: 'top 80%',
-    //         end: 'bottom',
-    //         scrub: 'true',
-    //         toggleActions: 'play none none none'
-    //     }
-    // });
-
-    // gsap.fromTo('.end', 
-    // {
-    //     opacity: 0
-    // },
-    // {
-    //     opacity: 1, 
-    //     scrollTrigger: {
-    //         trigger: '.end',
-    //         start: 'top 100%',
-    //         scrub: 'true',
-    //         toggleActions: 'play none none none'
-    //     }
-    // });
-
     gsap.fromTo('.heart__image', 
     {
         y: '-30%'
@@ -279,6 +205,56 @@ onMounted(() => {
             trigger: '.heart',
             start: 'top 15%',
             end: 'center',
+            scrub: 'true',
+            toggleActions: 'play none none none'
+        }
+    });
+
+    gsap.fromTo('.cheers-left', {
+      x:0,
+      y: 0,
+      rotate: 0
+    },
+    {
+        x: 118,
+        y: 400,
+        rotate:50,
+        scrollTrigger: {
+            trigger: '.cheers',
+            start: 'top top',
+            end: 'center top',
+            scrub: 'true',
+            toggleActions: 'play none none none'
+        }
+    });
+
+    gsap.fromTo('.cheers-right', {
+      x:0,
+      y: 0,
+      rotate: 0
+    },
+    {
+        x: -118,
+        y: 400,
+        rotate: -50,
+        scrollTrigger: {
+            trigger: '.cheers',
+            start: 'top top',
+            end: 'center top',
+            scrub: 'true',
+            toggleActions: 'play none none none'
+        }
+    });
+
+    gsap.fromTo('.cheers-text', {
+      opacity: 0,
+    },
+    {   
+        opacity: 1,
+        scrollTrigger: {
+            trigger: '.cheers',
+            start: 'center 10%',
+            end: 'bottom 100%',
             scrub: 'true',
             toggleActions: 'play none none none'
         }
@@ -407,8 +383,14 @@ onMounted(() => {
     }
 }
 
+.info__container {
+    margin: 100px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
 .invent__container {
-    height: 100vh;
     display: flex;
     justify-content: start;
     align-items: center;
@@ -449,7 +431,7 @@ onMounted(() => {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     &--title {
         text-align: center;
@@ -515,17 +497,30 @@ onMounted(() => {
 }
 
 .cheers__container {
-    // height: 100vh;
+    position: relative;
+    height: 80vh;
     display: flex;
-    justify-content: start;
-    align-items: center;
-    background: url('/images/cheers.png') no-repeat center center/cover;
-    height: 100%;
-    img {
-        transform: rotate(10deg);
-        width: 50%;
-        height: auto;
-        padding: 70px;
+    justify-content: space-between;
+    align-items: start;
+    // height: 100%;
+    // img {
+    //     transform: rotate(10deg);
+    //     width: 70%;
+    //     height: auto;
+    //     padding: 60px;
+    // }
+
+    &--left, &--right {
+        width: 100px;
+    }
+
+    &--text {
+        font-family: 'names';
+        font-size: 20vw;
+        position: absolute;
+        bottom: 100px;
+        left: 25%;
+        transform: rotate(-20deg);
     }
 }
 
@@ -577,5 +572,4 @@ onMounted(() => {
         opacity: 1;
         scale: 1.3
     }
-}
-</style>
+}</style>
