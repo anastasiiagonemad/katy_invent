@@ -39,7 +39,7 @@
         <div :class="$style['info__container']">
             <div class="invent" :class="$style['invent__container']">
                 <div :class="$style['invent__title']">
-                    <h2>27.06.2025</h2>
+                    <h2>27 июня 2025</h2>
                 </div>
                 <div>
                     <p><span>15:20</span><br>Торжественная роспись <br>Приморский ЗАГС</p>
@@ -397,11 +397,16 @@ onMounted(() => {
     flex-direction: column;
     text-align: center;
     h2 {
-        font-family: 'special';
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         color: rgb(183, 9, 9);
+        font-size: 10vw;
+        font-weight: 100;
     }
-    p, span {
+    p {
         font-size: 5vw;
+    }
+    span {
+        font-size: 8vw;
     }
 }
 
@@ -442,7 +447,6 @@ onMounted(() => {
         display: flex;
         flex-direction: column;
         justify-content: start;
-        margin: 0 30px;
 
         &__1, &__2, &__3 {
             display: flex;
@@ -452,6 +456,9 @@ onMounted(() => {
 
             span {
                 font-size: 10vw;
+            }
+            p {
+                font-size: 4.5vw;
             }
         }
         &__2 {
@@ -544,10 +551,11 @@ onMounted(() => {
         h2 {
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             font-weight: 600;
+            font-size: 10vw;
         }
         span {
             font-family: 'names';
-            font-size: 7vw;
+            font-size: 15vw;
             position: absolute;
             top: 20px;
             right: -10px;
